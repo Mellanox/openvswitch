@@ -390,6 +390,8 @@ do_context_delayed_release(void)
                     item->associated, item->timestamp, now);
         if (item->data->refcnt == 0 || item->associated) {
             context_release(item);
+        } else {
+            item->data->pending_release = false;
         }
         ovs_list_remove(list);
     }
