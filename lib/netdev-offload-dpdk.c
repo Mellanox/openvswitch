@@ -210,6 +210,7 @@ struct context_metadata {
     uint32_t (*id_alloc)(void *arg);
     void (*id_free)(void *arg, uint32_t id);
     size_t data_size;
+    bool delayed_release;
 };
 
 struct context_data {
@@ -351,13 +352,23 @@ static void
 context_delayed_release(struct context_metadata *md, void *arg, uint32_t id,
                         struct context_data *data, bool associated)
 {
-    struct context_release_item *item = xzalloc(sizeof *item);
+    struct context_release_item tmp_item, *item;
+
+    if (md->delayed_release) {
+        item = xzalloc(sizeof *item);
+    } else {
+        item = &tmp_item;
+    }
 
     item->md = md;
     item->arg = arg;
     item->id = id;
     item->data = data;
     item->associated = associated;
+    if (!md->delayed_release) {
+        context_release(item);
+        return;
+    }
     item->timestamp = time_msec();
     data->pending_release = true;
     ovs_list_push_back(&context_release_list, &item->node);
@@ -867,6 +878,7 @@ static struct context_metadata ct_miss_ctx_md = {
     .id_alloc = ct_ctx_id_alloc,
     .id_free = ct_ctx_id_free,
     .data_size = sizeof(struct ct_miss_ctx),
+    .delayed_release = true,
 };
 
 static int
@@ -1027,6 +1039,7 @@ static struct context_metadata flow_miss_ctx_md = {
     .id_alloc = flow_miss_id_alloc,
     .id_free = flow_miss_id_free,
     .data_size = sizeof(struct flow_miss_ctx),
+    .delayed_release = true,
 };
 
 static int
