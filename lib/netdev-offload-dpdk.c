@@ -405,6 +405,7 @@ do_context_delayed_release(void)
             item->data->pending_release = false;
         }
         ovs_list_remove(list);
+        free(item);
     }
 }
 
