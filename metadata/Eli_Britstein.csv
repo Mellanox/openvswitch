@@ -116,3 +116,7 @@ Change-Id=I553361bcade42c2799c2aca768412bdee69a3291; subject=netdev-offload-dpdk
 Change-Id=Ib8cce7e6d5222ab6eb22074a143e08a864c11f3e; subject=netdev-offload-dpdk: Refactor context release helper; feature=dpdk; upstream_status=NA; general=;
 Change-Id=I3a84c71088359c9e84220613296f3902eeacdd92; subject=netdev-offload-dpdk: Delayed context release for associated IDs; feature=dpdk; upstream_status=NA; general=;
 Change-Id=I4bbee65e6c30b985f55a8c22537f17d57e665389; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
+Change-Id=I41ab8c7f6b121eec3f09c208396f042ee2bc5460; subject=netdev-offload-dpdk: Enable re-release contextes; feature=dpdk; upstream_status=NA; general=;
+Change-Id=Ibf65bbfade703f7fec02df1220d4761384131d7b; subject=netdev-offload-dpdk: Delay release only for miss contextes; feature=dpdk; upstream_status=NA; general=;
+Change-Id=I8a71c2050cba216222fd27315495a60ba2f4761e; subject=netdev-offload-dpdk: Fix memory leak with delayed context release; feature=dpdk; upstream_status=NA; general=;
+Change-Id=I144b0fc125f74c0e0a146085c82e13d54b2ef55f; subject=Update meatadata; feature=ofed_scripts; upstream_status=ignore; general=;
