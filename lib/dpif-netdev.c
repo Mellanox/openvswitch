@@ -2902,7 +2902,7 @@ dp_netdev_flow_offload_main(void *data OVS_UNUSED)
                          dir == CT_DIR_INIT ? "init" : "reply",
                          UUID_ARGS((struct uuid *)&ct_offload[dir].ufid));
             }
-            if (!rets[CT_DIR_INIT] && !rets[CT_DIR_REP]) {
+            if (dp && !rets[CT_DIR_INIT] && !rets[CT_DIR_REP]) {
                 if (ct_offload[CT_DIR_INIT].op ==
                     DP_NETDEV_FLOW_OFFLOAD_OP_ADD) {
                     dp->offload_stats.ct_connections++;
@@ -2910,8 +2910,8 @@ dp_netdev_flow_offload_main(void *data OVS_UNUSED)
                     dp->offload_stats.ct_connections--;
                 }
             }
-            if ((dp->offload_stats.ct_connections &
-                 CT_CONN_TS_INTERVAL_MASK) == 0) {
+            if (dp && (dp->offload_stats.ct_connections &
+                       CT_CONN_TS_INTERVAL_MASK) == 0) {
                 ts_index &= CT_CONN_TS_MASK;
                 dp->offload_stats.timestamps[ts_index++] = time_msec();
             }
