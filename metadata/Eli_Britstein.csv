@@ -122,3 +122,5 @@ Change-Id=I8a71c2050cba216222fd27315495a60ba2f4761e; subject=netdev-offload-dpdk
 Change-Id=I144b0fc125f74c0e0a146085c82e13d54b2ef55f; subject=Update meatadata; feature=ofed_scripts; upstream_status=ignore; general=;
 Change-Id=I1df3e752704e46c0896e0274928b687efdd09674; subject=dpif-netdev: Fix insertion rate statistics for non-offloaded CT; feature=dpdk; upstream_status=NA; general=;
 Change-Id=I46283acf10b6f18da8f0f1cd963ca13dba81ff3e; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
+Change-Id=I548b98e494377de5e6b69ee0eec9b26b4a326bce; subject=conntrack-private: Change CT UDP aging times x4; feature=dpdk; upstream_status=NA; general=;
+Change-Id=I18fcc52087b5de5fc72912cb14ba68ba33409666; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
