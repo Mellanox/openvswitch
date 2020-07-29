@@ -124,3 +124,5 @@ Change-Id=I1df3e752704e46c0896e0274928b687efdd09674; subject=dpif-netdev: Fix in
 Change-Id=I46283acf10b6f18da8f0f1cd963ca13dba81ff3e; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
 Change-Id=I548b98e494377de5e6b69ee0eec9b26b4a326bce; subject=conntrack-private: Change CT UDP aging times x4; feature=dpdk; upstream_status=NA; general=;
 Change-Id=I18fcc52087b5de5fc72912cb14ba68ba33409666; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
+Change-Id=I21bf441f90043730e1dc3467449c7b536d1b8665; subject=netdev-offload-dpdk: Preserve HW statistics for modified flows; feature=dpdk; upstream_status=in_progress; general=;
+Change-Id=I0a6fca83cbf3edb91b851146e58f4abbfc4236d0; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
