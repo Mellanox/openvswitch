@@ -126,3 +126,5 @@ Change-Id=I548b98e494377de5e6b69ee0eec9b26b4a326bce; subject=conntrack-private: 
 Change-Id=I18fcc52087b5de5fc72912cb14ba68ba33409666; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
 Change-Id=I21bf441f90043730e1dc3467449c7b536d1b8665; subject=netdev-offload-dpdk: Preserve HW statistics for modified flows; feature=dpdk; upstream_status=in_progress; general=;
 Change-Id=I0a6fca83cbf3edb91b851146e58f4abbfc4236d0; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
+Change-Id=I77f0be1a825fcc1f0231e633dee388f91b45f3f9; subject=netdev-offload-dpdk: Fix multi-zone with zero zone; feature=dpdk; upstream_status=NA; general=;
+Change-Id=If3248f80921463043b26b4f0a991f9f42034665f; subject=Update metadata; feature=ofed_scripts; upstream_status=ignore; general=;
