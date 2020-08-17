@@ -2653,14 +2653,12 @@ parse_flow_match(struct netdev *netdev,
     }
     /* ct-zone */
     if (match->wc.masks.ct_zone &&
-        ((!match->flow.recirc_id &&
-          !(match->flow.ct_zone & match->wc.masks.ct_zone)) ||
-         (!get_zone_id(match->flow.ct_zone,
-                       &act_resources->ct_match_zone_id) &&
-          !add_pattern_match_reg_field(patterns,
-                                       REG_FIELD_CT_ZONE,
-                                       act_resources->ct_match_zone_id,
-                                       reg_fields[REG_FIELD_CT_ZONE].mask)))) {
+        (!get_zone_id(match->flow.ct_zone,
+                      &act_resources->ct_match_zone_id) &&
+         !add_pattern_match_reg_field(patterns,
+                                      REG_FIELD_CT_ZONE,
+                                      act_resources->ct_match_zone_id,
+                                      reg_fields[REG_FIELD_CT_ZONE].mask))) {
         consumed_masks->ct_zone = 0;
     }
     /* ct-mark */
