@@ -1,0 +1,5 @@
+debian/*.modules.in usr/src/modules/mlnx-openvswitch-datapath/debian
+debian/changelog usr/src/modules/mlnx-openvswitch-datapath/debian
+debian/compat usr/src/modules/mlnx-openvswitch-datapath/debian
+debian/control usr/src/modules/mlnx-openvswitch-datapath/debian
+debian/build/mlnx-openvswitch.tar.gz usr/src/modules/mlnx-openvswitch-datapath

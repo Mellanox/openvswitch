@@ -1,3 +1,9 @@
+mlnx-openvswitch (2.13.1-2) unstable; urgency=low
+   [ Vladimir Sokolovsky ]
+   * Rename openvswitch -> mlnx-openvswitch
+
+ -- Vladimir Sokolovsky <vlad@nvidia.com>  Mon, 24 Aug 2020 18:54:46 +0600
+
 openvswitch (2.13.1-1) unstable; urgency=low
    [ Open vSwitch team]
    * New upstream version

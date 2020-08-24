@@ -21,8 +21,8 @@ EXTRA_DIST += \
 	rhel/openvswitch-kmod-fedora.spec.in \
 	rhel/openvswitch.spec \
 	rhel/openvswitch.spec.in \
-	rhel/openvswitch-fedora.spec \
-	rhel/openvswitch-fedora.spec.in \
+	rhel/mlnx-openvswitch-fedora.spec \
+	rhel/mlnx-openvswitch-fedora.spec.in \
 	rhel/usr_share_openvswitch_scripts_ovs-systemd-reload \
 	rhel/usr_share_openvswitch_scripts_sysconfig.template \
 	rhel/usr_share_openvswitch_scripts_systemd_sysconfig.template \
@@ -53,19 +53,19 @@ $(srcdir)/rhel/openvswitch-kmod-fedora.spec: rhel/openvswitch-kmod-fedora.spec.i
 $(srcdir)/rhel/openvswitch.spec: rhel/openvswitch.spec.in $(top_builddir)/config.status
 	$(update_rhel_spec)
 
-$(srcdir)/rhel/openvswitch-fedora.spec: rhel/openvswitch-fedora.spec.in $(top_builddir)/config.status
+$(srcdir)/rhel/mlnx-openvswitch-fedora.spec: rhel/mlnx-openvswitch-fedora.spec.in $(top_builddir)/config.status
 	$(update_rhel_spec)
 
 RPMBUILD_TOP := $(abs_top_builddir)/rpm/rpmbuild
 RPMBUILD_OPT ?= --without check
 
 # Build user-space RPMs
-rpm-fedora: dist $(srcdir)/rhel/openvswitch-fedora.spec
+rpm-fedora: dist $(srcdir)/rhel/mlnx-openvswitch-fedora.spec
 	${MKDIR_P} ${RPMBUILD_TOP}/SOURCES
 	cp ${DIST_ARCHIVES} ${RPMBUILD_TOP}/SOURCES
 	rpmbuild ${RPMBUILD_OPT} \
                  -D "_topdir ${RPMBUILD_TOP}" \
-                 -ba $(srcdir)/rhel/openvswitch-fedora.spec
+                 -ba $(srcdir)/rhel/mlnx-openvswitch-fedora.spec
 
 # Build kernel datapath RPM
 rpm-fedora-kmod: dist $(srcdir)/rhel/openvswitch-kmod-fedora.spec

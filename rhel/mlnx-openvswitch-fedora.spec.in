@@ -70,10 +70,10 @@
 %global has_python2      %{defined __python2} &&  %{_py2} != python3
 %global no_python2       %{undefined __python2} || %{_py2} == python3
 
-Name: openvswitch
+Name: mlnx-openvswitch
 Summary: Open vSwitch
 Group: System Environment/Daemons
-URL: http://www.openvswitch.org/
+URL: https://github.com/Mellanox/openvswitch
 Version: @VERSION@
 
 # Nearly all of openvswitch is ASL 2.0.  The bugtool is LGPLv2+, and the
@@ -81,7 +81,7 @@ Version: @VERSION@
 # datapath/ is GPLv2 (although not built into any of the binary packages)
 License: ASL 2.0 and LGPLv2+ and SISSL
 Release: 1%{?dist}
-Source: http://openvswitch.org/releases/%{name}-%{version}.tar.gz
+Source: http://github.com/Mellanox/releases/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf automake libtool
@@ -142,26 +142,26 @@ Requires: selinux-policy-targeted
 Tailored Open vSwitch SELinux policy
 
 %if %{_py2} != "python3"
-%package -n %{_py2}-openvswitch
+%package -n %{_py2}-mlnx-openvswitch
 Summary: Open vSwitch python2 bindings
 License: ASL 2.0
 BuildArch: noarch
 Requires: %{_py2}
 Requires: %{_py2}-six
-%{?python_provide:%python_provide python2-openvswitch = %{version}-%{release}}
-%description -n %{_py2}-openvswitch
+%{?python_provide:%python_provide python2-mlnx-openvswitch = %{version}-%{release}}
+%description -n %{_py2}-mlnx-openvswitch
 Python bindings for the Open vSwitch database
 %endif
 
 %if %{do_build_python3}
-%package -n python3-openvswitch
+%package -n python3-mlnx-openvswitch
 Summary: Open vSwitch python3 bindings
 License: ASL 2.0
 BuildArch: noarch
 Requires: python3
 Requires: python3-six
 
-%description -n python3-openvswitch
+%description -n python3-mlnx-openvswitch
 Python bindings for the Open vSwitch database
 %endif
 
@@ -169,7 +169,7 @@ Python bindings for the Open vSwitch database
 Summary: Open vSwitch testing utilities
 License: ASL 2.0
 BuildArch: noarch
-Requires: %{_py2}-openvswitch = %{version}-%{release}
+Requires: %{_py2}-mlnx-openvswitch = %{version}-%{release}
 Requires: %{_py2} %{_py2}-netifaces
 %if 0%{?rhel} >= 8
 Requires: %{_py2}-twisted
@@ -204,7 +204,7 @@ service.
 %package ipsec
 Summary: Open vSwitch IPsec tunneling support
 License: ASL 2.0
-Requires: openvswitch %{_py2}-openvswitch libreswan
+Requires: mlnx-openvswitch %{_py2}-mlnx-openvswitch libreswan
 
 %description ipsec
 This package provides IPsec tunneling support for OVS tunnels.
@@ -472,12 +472,12 @@ fi
 %{_datadir}/selinux/packages/%{name}/openvswitch-custom.pp
 
 %if %{has_python2}
-%files -n %{_py2}-openvswitch
+%files -n %{_py2}-mlnx-openvswitch
 %{python2_sitelib}/ovs
 %endif
 
 %if %{do_build_python3}
-%files -n python3-openvswitch
+%files -n python3-mlnx-openvswitch
 %{python3_sitelib}/ovs
 %endif
 
