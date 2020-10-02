@@ -1,3 +1,9 @@
+mlnx-openvswitch (2.13.1-3) unstable; urgency=low
+   [ Ameer Mahagneh <ameerm@nvidia.com> ]
+   * daemon-unix: Support OVS-DPDK HW offloads for non-root user
+
+ -- Vladimir Sokolovsky <vlad@nvidia.com>  Fri, 03 Oct 2020 14:02:32 +0600
+
 mlnx-openvswitch (2.13.1-2) unstable; urgency=low
    [ Vladimir Sokolovsky ]
    * Rename openvswitch -> mlnx-openvswitch
